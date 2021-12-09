@@ -1,0 +1,104 @@
+#header {
+   display: flex;
+   width: 100vw;
+   height: 98px;
+   justify-content: space-between;
+   align-items: center;
+   background-color: var(--sky-magenta);
+}
+
+#company-logo {
+   text-decoration: none;
+   /* height: 100%; */
+}
+
+#company-logo-image {
+   width: 150px;
+   height: 102.69px;
+   /* justify-self: flex-start; */
+}
+
+#search-bar-div {
+   align-self: center;
+   border: 3px solid var(--mauve);
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 5px;
+}
+
+#search-bar {
+   height: 30px;
+   width: 750px;
+   font-size: 20px;
+   border: none;
+   border-radius: 10px;
+   background-color: var(--sky-magenta);
+   color: white;
+   font-family: "Mochiy Pop P One", sans-serif;
+}
+
+#search-button {
+   color: var(--mauve);
+   font-size: 25px;
+}
+#search-button:hover {
+   cursor: pointer;
+}
+
+#header-account-buttons {
+   display: flex;
+   align-items: center;
+}
+
+#profile-link {
+   text-decoration: none;
+}
+
+#header-profile-button {
+   display: flex;
+   align-items: center;
+   border: 2px solid var(--mauve);
+   color: var(--mauve);
+   border-radius: 10px;
+   padding: 5px;
+   transition: background-color 250ms, color 250ms;
+}
+#header-profile-button:hover {
+   cursor: pointer;
+   background-color: var(--mauve);
+   color: black;
+}
+#header-profile-button > p {
+   font-size: 15px;
+   margin-left: 10px;
+   font-family: "Mochiy Pop P One", sans-serif;
+}
+
+#cart-link {
+   margin-right: 25px;
+   text-decoration: none;
+}
+
+#header-user-cart-button {
+   margin-left: 20px;
+   display: flex;
+   align-items: center;
+   border: 2px solid var(--mauve);
+   color: var(--mauve);
+   border-radius: 10px;
+   padding: 5px;
+   transition: background-color 250ms, color 250ms;
+}
+#header-user-cart-button:hover {
+   cursor: pointer;
+   background-color: var(--mauve);
+   color: black;
+}
+#header-user-cart-button > p {
+   font-size: 15px;
+   font-weight: 100;
+   margin-left: 10px;
+   font-family: "Mochiy Pop P One", sans-serif;
+}

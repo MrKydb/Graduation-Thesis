@@ -1,0 +1,10 @@
+.order {
+   margin-bottom: 200px;
+}
+
+.orders-order-item {
+   max-width: 400px;
+}
+.orders-order-item > img {
+   max-width: 150px;
+}

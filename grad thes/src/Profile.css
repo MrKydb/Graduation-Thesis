@@ -1,0 +1,54 @@
+#login-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin-top: 100px;
+}
+
+#login-items {
+   margin-top: 50px;
+   /* border: 1px solid rgba(0, 0, 0, 0.3); */
+   background-color: rgba(0, 0, 0, 0.03);
+   font-size: 1.1rem;
+   border-radius: 10px;
+   padding: 25px;
+}
+
+#login-items > button {
+   font-size: 1rem;
+   padding: 5px;
+   background-color: var(--mauve);
+   border: none;
+   margin-top: 5px;
+   border-radius: 5px;
+}
+#login-items > button:hover {
+   cursor: pointer;
+}
+
+#login-items > input {
+   font-size: 1.1rem;
+   padding: 2px;
+}
+
+#login-items > label {
+   font-family: "Mochiy Pop P One", sans-serif;
+}
+
+#user-profile-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 150px;
+}
+
+#company-logo {
+   text-decoration: none;
+}
+
+#company-logo-image {
+   width: 150px;
+   height: 102.69px;
+   /* justify-self: flex-start; */
+}
