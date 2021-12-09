@@ -1,0 +1,46 @@
+#checkout-container {
+   display: grid;
+   grid-template-areas:
+      "items che-flex"
+      "items che-flex"
+      "items che-flex"
+      "items che-flex";
+   padding: 50px 250px;
+}
+
+.checkout-items {
+   width: 750px;
+}
+
+/* #che-address {
+   grid-area: address;
+} */
+/* #che-payment {
+   grid-area: payment;
+} */
+#che-items {
+   grid-area: items;
+}
+
+#che-flex {
+   grid-area: che-flex;
+}
+#pay-border {
+   border-left: 5px solid var(--mauve);
+   padding: 15px 30px;
+}
+
+.checkout-title > h3 {
+   margin-bottom: 20px;
+}
+
+#che-address {
+   margin-bottom: 50px;
+}
+.payment-details {
+   width: 500px;
+}
+
+#payment-method {
+   width: 100%;
+}

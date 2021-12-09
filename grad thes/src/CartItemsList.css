@@ -1,0 +1,37 @@
+#cart-items-list {
+   list-style-type: none;
+}
+
+#cart-items-list > li {
+   display: grid;
+   grid-template-areas:
+      "img name name name name"
+      "img price empty1 empty1 empty1"
+      "img button empty2 empty2 empty3";
+   margin-bottom: 30px;
+   grid-gap: 10px;
+}
+
+#cart-items-list > li > img {
+   width: 150px;
+   /* margin-bottom: 5px; */
+   grid-area: img;
+}
+
+#cart-items-list > li > button {
+   background-color: white;
+   color: var(--mauve);
+   border: none;
+   padding: 10px;
+   border-radius: 5px;
+   grid-area: button;
+}
+#cart-items-list > li > button:hover {
+   cursor: pointer;
+   font-size: 1.1rem;
+}
+
+#cart-items-list > li > p {
+   margin-bottom: 5px;
+   grid-area: name;
+}
