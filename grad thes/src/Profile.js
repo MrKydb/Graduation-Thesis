@@ -1,91 +1,82 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { auth } from "./firebase";
 import "./Profile.css";
+import { useStateValue } from "./StateProvider";
+import { updateEmail, updatePassword, getAuth } from "firebase";
+// import { auth } from "./firebase";
+// import { updateEmail, updatePassword } from "firebase";
 
-function Login() {
-   const [email, setEmail] = useState("");
+function UserInformations() {
+   const [{ user }, dispatch] = useStateValue();
+   const [email, setEmail] = useState(user?.email);
    const [password, setPassword] = useState("");
-   const navigate = useNavigate();
+   const [emailSuccess, setEmailSuccess] = useState(false);
+   const [passwordSuccess, setPasswordSuccess] = useState(false);
 
-   const login = (e) => {
-      e.preventDefault();
-      auth
-         .signInWithEmailAndPassword(email, password)
-         .then((auth) => {
-            navigate("/");
-         })
-         .catch((error) => {
-            alert(error.message);
-         });
-   };
-
-   const signUp = (e) => {
-      e.preventDefault();
-      auth
-         .createUserWithEmailAndPassword(email, password)
-         .then((auth) => {
-            if (auth) navigate("/");
+   const handleChangeEmail = () => {
+      const auth = getAuth();
+      if (user) {
+      }
+      auth.currentUser
+         .updateEmail(email)
+         .then(() => {
+            setEmailSuccess(true);
          })
          .catch((error) => alert(error.message));
    };
-
+   const handleChangePassword = () => {
+      const auth = getAuth();
+      if (user) {
+         updatePassword(auth.currentUser, password)
+            .then(() => {
+               setPasswordSuccess(true);
+            })
+            .catch((error) => alert(error.message));
+      }
+   };
    return (
-      <div id="login-container">
-         <Link to="/" id="logo-link">
-            <img
-               src="https://i.imgur.com/Iab9kHp.png"
-               alt="Company Logo"
-               id="company-logo-image"
-            />
-         </Link>
-         <div id="login-items">
-            <label>E mail</label>
-            <br />
-            <input
-               type="text"
-               value={email}
-               onChange={(e) => setEmail(e.target.value)}
-               required
-            />
-            <br />
-            <br />
-            <label>Password</label>
-            <br />
-            <input
-               type="password"
-               value={password}
-               onChange={(e) => setPassword(e.target.value)}
-               required
-            />
-            <br />
-            <button type="submit" onClick={login}>
-               Login
-            </button>
-            <br />
-            <br />
-            <p>Don't have an account?</p>
-            <button onClick={signUp}>Sign up</button>
+      <div id="user-informations">
+         <div>
+            <form>
+               <label>E mail</label>
+               <input
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+               />
+               <button onClick={handleChangeEmail}>Change Email</button>
+               {emailSuccess ? "Success email!" : null}
+               <br />
+               <label>Password</label>
+               <input
+                  type="text"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="password"
+               />
+               <button onClick={handleChangePassword}>Change Password</button>
+               {passwordSuccess ? "Success password!" : null}
+            </form>
          </div>
-      </div>
-   );
-}
-
-function UserProfile() {
-   return (
-      <div id="user-profile-container">
-         <div id="user-profile-items">USER PROFİLE</div>
       </div>
    );
 }
 
 function Profile() {
    return (
-      <div>
-         {/* write two components. one for login and other for after login. keep the state in a var obviously */}
-         {/* conditional render here */}
-         <Login />
-         <UserProfile />
+      <div id="profile-container">
+         <div id="profile-comp-center">
+            <div id="profile-nav">
+               <div className="profile-nav-link">
+                  <button>My User Informations</button>
+               </div>
+               <div className="profile-nav-link">
+                  <button>My Orders</button>
+               </div>
+            </div>
+            <div id="profile-details">
+               <UserInformations />
+            </div>
+         </div>
       </div>
    );
 }

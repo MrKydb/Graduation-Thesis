@@ -8,6 +8,7 @@ import Checkout from "./Checkout";
 import PopularProducts from "./PopularProducts";
 import ErrorPage from "./ErrorPage";
 import Cart from "./Cart";
+import Login from "./Login";
 import Profile from "./Profile";
 import { auth } from "./firebase.js";
 import { useStateValue } from "./StateProvider";
@@ -84,9 +85,19 @@ function App() {
                ></Route>
                <Route
                   exact
+                  path="/login"
+                  element={
+                     <>
+                        <Login />
+                     </>
+                  }
+               />
+               <Route
+                  exact
                   path="/profile"
                   element={
                      <>
+                        <Header />
                         <Profile />
                      </>
                   }

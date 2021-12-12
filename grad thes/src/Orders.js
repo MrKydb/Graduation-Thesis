@@ -35,6 +35,15 @@ function Orders() {
                   <div key={index} className="order">
                      <h2>Order {order.data.created}</h2>
                      <p>
+                        Order Total
+                        <NumberFormat
+                           value={order.data.amount}
+                           displayType="text"
+                           thousandSeparator={true}
+                           prefix="₺"
+                        />
+                     </p>
+                     <p>
                         Date:{" "}
                         {moment
                            .unix(order.data.created)

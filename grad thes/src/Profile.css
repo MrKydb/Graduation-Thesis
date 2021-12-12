@@ -1,54 +1,25 @@
-#login-container {
+#profile-container {
    display: flex;
-   flex-direction: column;
    align-items: center;
    justify-content: center;
-   margin-top: 100px;
+}
+#profile-comp-center {
+   display: flex;
 }
 
-#login-items {
-   margin-top: 50px;
-   /* border: 1px solid rgba(0, 0, 0, 0.3); */
-   background-color: rgba(0, 0, 0, 0.03);
-   font-size: 1.1rem;
-   border-radius: 10px;
-   padding: 25px;
-}
-
-#login-items > button {
-   font-size: 1rem;
+#profile-nav {
+   width: 170px;
+   border: 2px solid red;
    padding: 5px;
-   background-color: var(--mauve);
+}
+
+.profile-nav-link > button {
+   font-size: 1rem;
    border: none;
-   margin-top: 5px;
-   border-radius: 5px;
+   background-color: unset;
+   margin-bottom: 10px;
 }
-#login-items > button:hover {
+.profile-nav-link > button:hover {
    cursor: pointer;
-}
-
-#login-items > input {
-   font-size: 1.1rem;
-   padding: 2px;
-}
-
-#login-items > label {
-   font-family: "Mochiy Pop P One", sans-serif;
-}
-
-#user-profile-container {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-top: 150px;
-}
-
-#company-logo {
-   text-decoration: none;
-}
-
-#company-logo-image {
-   width: 150px;
-   height: 102.69px;
-   /* justify-self: flex-start; */
+   color: var(--mauve);
 }
