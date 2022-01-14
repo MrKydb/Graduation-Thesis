@@ -1,8 +1,0 @@
-#popular-products-grid {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   padding-left: 200px;
-   padding-right: 200px;
-   padding-top: 100px;
-   gap: 25px;
-}
