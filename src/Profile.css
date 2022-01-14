@@ -1,0 +1,60 @@
+#profile-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-family: "Mochiy Pop P One", sans-serif;
+}
+#profile-comp-center {
+   display: flex;
+   margin-top: 100px;
+}
+
+#profile-nav {
+   width: 250px;
+   border-right: 2px solid grey;
+   padding: 5px;
+   margin-right: 100px;
+}
+
+.profile-nav-link > button {
+   font-size: 1rem;
+   border: none;
+   background-color: var(--mauve);
+   margin-bottom: 15px;
+   border-radius: 20px;
+   padding: 15px;
+   /* font-family: "Mochiy Pop P One", sans-serif; */
+   font-family: inherit;
+}
+.profile-nav-link > button:hover {
+   cursor: pointer;
+   color: var(--mauve);
+   background-color: black;
+}
+
+#profile-details {
+   font-family: inherit;
+   width: 900px;
+   /* background-color: red; */
+}
+
+#user-informations-form {
+   display: flex;
+}
+
+#profile-labels-div {
+   margin-right: 20px;
+}
+
+#profile-form-elements-div > input {
+   margin-right: 5px;
+}
+
+#profile-form-elements-div > button {
+   padding: 2px;
+}
+
+/* #orders-div > ul > li {
+   list-style-type: none;
+   font-size: 10px;
+} */

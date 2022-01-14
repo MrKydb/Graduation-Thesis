@@ -1,0 +1,32 @@
+#orders-container {
+   font-size: 12px;
+   padding: 50px 100px;
+   font-family: "Mochiy Pop P One", sans-serif;
+}
+#orders-container > h1 {
+   margin-bottom: 25px;
+}
+
+.order {
+   margin-bottom: 50px;
+   padding-bottom: 20px;
+   border-bottom: 2px solid gray;
+}
+
+#orders-list {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+   grid-gap: 10px;
+}
+
+.orders-order-item {
+   width: 170px;
+   list-style-type: none;
+   margin-bottom: 10px;
+   padding: 10px;
+   background-color: #eee;
+   border-radius: 10px;
+}
+.orders-order-item > img {
+   max-width: 150px;
+}
