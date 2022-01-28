@@ -7,11 +7,6 @@
 
 #cart-items-list > li {
    display: flex;
-   /* grid-template-areas:
-      "img name name name name"
-      "img price empty1 empty1 empty1"
-      "img button empty2 empty2 empty3";
-      grid-gap: 10px; */
    margin-bottom: 30px;
 }
 
@@ -23,8 +18,6 @@
 #img-div > img {
    max-width: 150px;
    max-height: 180px;
-   /* margin-bottom: 5px; */
-   /* grid-area: img; */
 }
 
 #item-metadata > button {

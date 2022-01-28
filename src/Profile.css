@@ -35,7 +35,6 @@
 #profile-details {
    font-family: inherit;
    width: 900px;
-   /* background-color: red; */
 }
 
 #user-informations-form {
@@ -53,8 +52,3 @@
 #profile-form-elements-div > button {
    padding: 2px;
 }
-
-/* #orders-div > ul > li {
-   list-style-type: none;
-   font-size: 10px;
-} */

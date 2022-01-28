@@ -2,7 +2,6 @@
    display: flex;
    width: 100vw;
    height: 98px;
-   /* height: 60px; */
    justify-content: space-between;
    align-items: center;
    background-color: var(--sky-magenta);
@@ -10,13 +9,11 @@
 
 #company-logo {
    text-decoration: none;
-   /* height: 100%; */
 }
 
 #company-logo-image {
    width: 150px;
    height: 102.69px;
-   /* justify-self: flex-start; */
 }
 
 #search-bar-div {

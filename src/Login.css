@@ -8,7 +8,6 @@
 
 #login-items {
    margin-top: 50px;
-   /* border: 1px solid rgba(0, 0, 0, 0.3); */
    background-color: rgba(0, 0, 0, 0.03);
    font-size: 1.1rem;
    border-radius: 10px;
@@ -43,5 +42,4 @@
 #company-logo-image {
    width: 150px;
    height: 102.69px;
-   /* justify-self: flex-start; */
 }

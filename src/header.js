@@ -2,24 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
-import { auth, db } from "./firebase";
+import { auth } from "./firebase";
 import { useNavigate } from "react-router-dom";
 
-// import { collection, query, where, getDocs } from "firebase/firestore";
-// import firebase from "firebase";
-// import { firestore } from "firebase";
-
 function Header() {
-   const [{ user, allProducts, searchResults }, dispatch] = useStateValue();
+   const [{ user, allProducts }, dispatch] = useStateValue();
    const [searchParameter, setSearchParameter] = useState("");
-   // const [searchResults, setSearchResults] = useState([]);
-   const [dbProducts] = useState([]);
    const [keywords, setKeywords] = useState("");
    const navigate = useNavigate();
    const [firstRenderFlag, setFirstRenderFlag] = useState(false);
-
-   // const [searchResults, setSearchResults] = useState([]);
-   // const productsRef = firebase.firestore().collection("products");
 
    function handleSignout() {
       if (user) {
@@ -36,45 +27,25 @@ function Header() {
       console.log(keywords);
    };
 
-   // async function qwe(i) {
-   //    let x = await firebase
-   //       .firestore()
-   //       .getDocs(
-   //          firebase
-   //             .firestore()
-   //             .query(
-   //                productsRef,
-   //                where("keywords", "array-contains", keywords[i])
-   //             )
-   //       );
-   //    return x;
-   // }
-
    useEffect(() => {
       let tempArr = [];
       for (let i = 0; i < keywords.length; i++) {
-         // console.log(allProducts.allProducts);
          Object.entries(allProducts).map((item) => {
-            // console.log(item[1]);
             Object.entries(item[1]).map((product) => {
-               // console.log(product["1"].name);
                for (let i = 0; i < keywords.length; i++) {
                   for (let j = 0; j < product["1"].keywords.length; j++) {
                      if (keywords[i] === product["1"].keywords[j]) {
                         tempArr.push(product["1"]);
-                        // setSearchResults([...searchResults, product["1"]]);
                      }
                   }
                }
             });
          });
       }
-      // setSearchResults(tempArr);
       dispatch({
          type: "SET_SEARCH_RESULTS",
          item: tempArr,
       });
-      // setSearchParameter("");
 
       // firstRenderFlag is false initially and set to true after first render
       if (firstRenderFlag) {
@@ -82,10 +53,6 @@ function Header() {
       }
       setFirstRenderFlag(true);
    }, [keywords]);
-
-   useEffect(() => {
-      // console.log("!!!!!!!!", searchResults);
-   }, [searchResults]);
 
    return (
       <>

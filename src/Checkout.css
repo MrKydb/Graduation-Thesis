@@ -12,12 +12,6 @@
    width: 750px;
 }
 
-/* #che-address {
-   grid-area: address;
-} */
-/* #che-payment {
-   grid-area: payment;
-} */
 #che-items {
    grid-area: items;
 }

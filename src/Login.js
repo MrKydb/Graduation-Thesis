@@ -5,7 +5,7 @@ import "./Login.css";
 import { useStateValue } from "./StateProvider";
 
 function Login() {
-   const [{ cart, user }, dispatch] = useStateValue();
+   const [{ user }] = useStateValue();
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
    const [userCred, setUserCred] = useState();
@@ -28,17 +28,9 @@ function Login() {
       auth
          .createUserWithEmailAndPassword(email, password)
          .then((auth) => {
-            // console.log(auth.user.uid);
             if (auth) {
                setUserCred(auth);
                navigate("/");
-               // db.collection("users")
-               //    .doc(auth.user.uid)
-               //    .collection("cart")
-               //    .doc("1")
-               //    .set({
-               //       cart: [],
-               //    });
             }
          })
          .catch((error) => alert(error.message));
@@ -53,7 +45,6 @@ function Login() {
             .set({
                cart: [],
             });
-         // console.log("i run usercred");
       }
    }, [userCred]);
 
@@ -97,15 +88,5 @@ function Login() {
       </div>
    );
 }
-
-// function Profile() {
-//    return (
-//       <div>
-//          {/* write two components. one for login and other for after login. keep the state in a var obviously */}
-//          {/* conditional render here */}
-//          <Login />
-//       </div>
-//    );
-// }
 
 export default Login;

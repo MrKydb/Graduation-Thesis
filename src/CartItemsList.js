@@ -16,9 +16,9 @@ function CartItemsList() {
    return (
       <div id="cart-items-list-container">
          <ul id="cart-items-list">
-            {cart.map((item) => {
+            {cart.map((item, index) => {
                return (
-                  <li>
+                  <li key={index}>
                      <div id="img-div">
                         <img src={item.img} alt="item" />
                      </div>
@@ -36,7 +36,7 @@ function CartItemsList() {
                               removeFromCart(item.id);
                            }}
                         >
-                           <i class="fas fa-trash-alt fa-2x"></i>
+                           <i className="fas fa-trash-alt fa-2x"></i>
                         </button>
                      </div>
                   </li>

@@ -4,11 +4,6 @@
    align-items: center;
 }
 
-/* #search-results-title {
-   margin-top: 50px;
-   margin-left: 200px;
-} */
-
 #category-list {
    list-style-type: none;
    display: grid;

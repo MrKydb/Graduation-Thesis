@@ -13,7 +13,6 @@ const specialOffersDescriptionArr = [
    "Place holder text3.",
 ];
 const lenOfArrays = specialOffersImageSourceArr.length;
-// console.log(lenOfArrays);
 
 const SpecialOffers = () => {
    const [state, setState] = useState({
@@ -21,7 +20,6 @@ const SpecialOffers = () => {
       specialOffersImageSource: specialOffersImageSourceArr[0],
    });
    let indexForArrays = 0;
-   // const [singleCallFlag, setSingleCallFlag] = useState(true);
    const [loopFunctionId, setLoopFunctionId] = useState();
 
    const contentUpdater = () => {
@@ -36,15 +34,6 @@ const SpecialOffers = () => {
       });
    };
 
-   // let loopFunctionId;
-   // if (singleCallFlag) {
-   //    setSingleCallFlag(false);
-   //    loopFunctionId = setInterval(function () {
-   //       contentUpdater();
-   //    }, 10000);
-   // }
-
-   // useEffect will run the return function on component unmount (cleanup function)
    useEffect(() => {
       setLoopFunctionId(
          setInterval(function () {
@@ -55,14 +44,6 @@ const SpecialOffers = () => {
          clearInterval(loopFunctionId);
       };
    }, []);
-
-   // useEffect(() => {
-   //    setState({
-   //       loopFunctionId: setInterval(function () {
-   //          contentUpdater();
-   //       }, 10000),
-   //    });
-   // }, []);
 
    return (
       <div id="special-offers-container">
@@ -80,6 +61,4 @@ const SpecialOffers = () => {
    );
 };
 
-// i can make a function to change the content every 10 seconds or so
-// just have the contents and switch between images and details etc
 export default SpecialOffers;

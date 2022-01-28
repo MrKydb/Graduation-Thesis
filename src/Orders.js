@@ -6,7 +6,7 @@ import "./Orders.css";
 import { useStateValue } from "./StateProvider";
 
 function Orders() {
-   const [{ cart, user }, dispatch] = useStateValue();
+   const [{ user }] = useStateValue();
    const [orders, setOrders] = useState([]);
    useEffect(() => {
       if (user) {

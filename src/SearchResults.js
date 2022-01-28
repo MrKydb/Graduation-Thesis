@@ -1,8 +1,6 @@
 import React from "react";
 import NumberFormat from "react-number-format";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react/cjs/react.development";
-import Product from "./Product";
 import "./SearchResults.css";
 import { useStateValue } from "./StateProvider";
 
@@ -17,8 +15,7 @@ function SearchResults() {
       });
    };
 
-   //    console.log(searchResults.length);
-   if (searchResults.length == 0) navigate("/");
+   if (searchResults.length === 0) navigate("/");
 
    return (
       <div id="search-results-container">
@@ -27,7 +24,6 @@ function SearchResults() {
                {searchResults.length} items found
             </h1>
             <ul id="search-results-list">
-               {/* {console.log(searchResults)} */}
                {Object.entries(searchResults).map((item, index) => {
                   return (
                      <li key={index} className="search-results-element">

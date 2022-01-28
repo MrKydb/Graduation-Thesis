@@ -7,7 +7,7 @@ import { getCartTotal } from "./reducer";
 import { useStateValue } from "./StateProvider";
 
 function Cart() {
-   const [{ cart }, dispatch] = useStateValue();
+   const [{ cart }] = useStateValue();
 
    return (
       <div id="cart-container">

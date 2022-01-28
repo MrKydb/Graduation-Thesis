@@ -41,7 +41,6 @@ function App() {
 
    useEffect(() => {
       auth.onAuthStateChanged(function (authUser) {
-         // console.log(authUser);
          if (authUser) {
             dispatch({
                type: "SET_USER",
@@ -56,23 +55,17 @@ function App() {
       });
    }, []);
 
-   // fix it !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
    useEffect(() => {
       if (user) {
          db.collection("users")
             .doc(user.uid)
             .collection("cart")
             .onSnapshot((snapshot) => {
-               // snapshot.docs.map((doc) => console.log(doc.data().cart));
-               // doc.data().cart
                setCartFromDB(
-                  snapshot.docs?.map((doc) =>
-                     // console.log( doc.data().cart)
-                     ({
-                        id: doc.id,
-                        data: doc.data(),
-                     })
-                  )
+                  snapshot.docs?.map((doc) => ({
+                     id: doc.id,
+                     data: doc.data(),
+                  }))
                );
             });
       }
@@ -81,7 +74,6 @@ function App() {
    useEffect(() => {
       let cfromDB = [];
       cartFromDB.map((order) => (cfromDB = order.data.cart));
-      // console.log(cfromDB);
       dispatch({
          type: "SET_CART",
          item: cfromDB,
@@ -93,7 +85,6 @@ function App() {
          db.collection("users").doc(user.uid).collection("cart").doc("1").set({
             cart: cart,
          });
-         // console.log("i run");
       }
    }, [cart]);
 
@@ -112,34 +103,16 @@ function App() {
          db.collection("products")
             .doc(productCollections[i])
             .onSnapshot((snapshot) => {
-               // console.log(snapshot.data());
                productsFromDB.push(snapshot.data());
-               // ppFromDB.push(
-               //    snapshot.docs.map((doc) => ({
-               //       id: doc.id,
-               //       data: doc.data(),
-               //    }))
-               // );
             });
       }
-      // console.log(productsFromDB);
+
       dispatch({
          type: "SET_ALL_PRODUCTS",
          item: productsFromDB,
       });
       setAllProducts(productsFromDB);
    }, []);
-
-   // useEffect(() => {
-   //    if (user) {
-   //       db.collection("users").doc(user?.uid).collection("cart").doc("1").set({
-   //          cart: cart,
-   //          fix: "fix",
-   //          fix2: "fix2",
-   //          fix3: "fix3",
-   //       });
-   //    }
-   // }, [cart]);
 
    return (
       <Router>
@@ -248,7 +221,6 @@ function App() {
                   path="*"
                   element={
                      <>
-                        {/* <Header /> <Menu />  */}
                         <ErrorPage />
                      </>
                   }

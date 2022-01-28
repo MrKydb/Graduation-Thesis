@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import NumberFormat from "react-number-format";
 import { Link } from "react-router-dom";
 import "./Category.css";
@@ -8,18 +8,8 @@ function Category() {
    const [{ allProducts, selectedCategory }, dispatch] = useStateValue();
    let category = allProducts[selectedCategory];
 
-   //    useEffect(() => {
-   //       category = allProducts[selectedCategory];
-   //    }, [selectedCategory]);
-
    return (
-      // <div>
-      //    {category && (
-
-      //    )}
-      // </div>
       <div>
-         {/* <div>{console.log(Object.keys(allProducts))}</div> */}
          <div id="category-container">
             <div id="center-div">
                <ul id="category-list">

@@ -1,4 +1,4 @@
-import { useElements, useStripe, CardElement } from "@stripe/react-stripe-js";
+import { CardElement } from "@stripe/react-stripe-js";
 import React, { useState } from "react";
 import NumberFormat from "react-number-format";
 import CartItemsList from "./CartItemsList";
@@ -12,11 +12,6 @@ function Checkout() {
    const [{ cart, user }, dispatch] = useStateValue();
    const navigate = useNavigate();
 
-   // const stripe = useStripe();
-   // const elements = useElements();
-
-   // const [succeeded, setSucceeded] = useState(false);
-   // const [processing, setProcessing] = useState("");
    const [error, setError] = useState(null);
    const [disabled, setDisabled] = useState(true);
 
@@ -87,16 +82,6 @@ function Checkout() {
                            />
                            {error && <div>{error}</div>}
                         </form>
-                        {/* <form>
-                           <label>Card Number</label>
-                           <input type="text" />
-                           <br />
-                           <label>Expiration Date</label>
-                           <input type="date" />
-                           <br />
-                           <label>CVC</label>
-                           <input type="text" />
-                        </form> */}
                      </div>
                   </div>
                </div>
