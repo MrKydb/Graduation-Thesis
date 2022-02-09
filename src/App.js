@@ -19,8 +19,10 @@ import SearchResults from "./SearchResults";
 import ProductDetails from "./ProductDetails";
 import Category from "./Category";
 
+const STRIPE_PUBLIC_KEY="";
+
 const promise = loadStripe(
-   "pk_test_51K2lZuEEyfXoNvjEik5Rnvz7UAi9EXY4o0nzjCSmj4a3xDUABkUNoh2AB9vJ8h6KYFOtyWmLBf791dpz1VSfCbL200J0Y0vRsr"
+   STRIPE_PUBLIC_KEY
 );
 const productCollections = [
    "electronics",
